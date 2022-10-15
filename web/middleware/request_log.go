@@ -8,7 +8,7 @@ import (
 	"github.com/gin-gonic/gin"
 	"github.com/gookit/goutil/mathutil"
 	"github.com/gookit/goutil/strutil"
-	"github.com/inhere/go-gin-skeleton/app"
+	"github.com/weilinux/go-gin-skeleton-auth/app"
 	"go.uber.org/zap"
 )
 

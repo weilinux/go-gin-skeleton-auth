@@ -9,7 +9,7 @@ import (
 
 	"github.com/globalsign/mgo"
 	"github.com/globalsign/mgo/bson"
-	"github.com/inhere/go-gin-skeleton/app"
+	"github.com/weilinux/go-gin-skeleton-auth/app"
 )
 
 // Collection mongodb collection interface
@@ -22,16 +22,16 @@ type DebugLogger struct {
 }
 
 type mgoConfig struct {
-	Auth string
-	Uri string
-	Servers string
+	Auth     string
+	Uri      string
+	Servers  string
 	Database string
-	Disable bool
+	Disable  bool
 }
 
 var (
-	cfg mgoConfig
-	connection *mgo.Session
+	cfg             mgoConfig
+	connection      *mgo.Session
 	invalidObjectId = errors.New("mongo: must provide an valid document Id")
 )
 
@@ -79,18 +79,20 @@ func createConnection() (err error) {
 
 // Connection return mongodb connection.
 // usage:
-//   conn := mongo.Connection()
-//   defer conn.Close()
-//   ... do something ...
+//
+//	conn := mongo.Connection()
+//	defer conn.Close()
+//	... do something ...
 func Connection() *mgo.Session {
 	return connection.Clone()
 }
 
 // WithCollection 公共方法，使用 collection 对象
 // usage:
-//   error = mongo.WithCollection("name", func (conn *mgo.Collection) error {
-//       ... do something ...
-//   })
+//
+//	error = mongo.WithCollection("name", func (conn *mgo.Collection) error {
+//	    ... do something ...
+//	})
 func WithCollection(collection string, s func(*mgo.Collection) error) error {
 	conn := Connection()
 	defer conn.Close()
@@ -100,7 +102,7 @@ func WithCollection(collection string, s func(*mgo.Collection) error) error {
 }
 
 // Conn return connection
-func Conn() *mgo.Session  {
+func Conn() *mgo.Session {
 	return connection
 }
 

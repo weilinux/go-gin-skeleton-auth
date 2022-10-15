@@ -7,7 +7,7 @@ import (
 
 	"github.com/garyburd/redigo/redis"
 	"github.com/gookit/goutil/mathutil"
-	"github.com/inhere/go-gin-skeleton/helper"
+	"github.com/weilinux/go-gin-skeleton-auth/helper"
 	"go.uber.org/zap"
 )
 
@@ -36,7 +36,8 @@ func GenKey(tpl string, keys ...interface{}) string {
 
 // Get cache and map to a struct
 // usage:
-// 	cache.GetAndMapTo("key", &User{})
+//
+//	cache.GetAndMapTo("key", &User{})
 func GetAndMapTo(key string, v interface{}) (err error) {
 	var ret interface{}
 
@@ -125,9 +126,10 @@ func exec(commandName string, args ...interface{}) (reply interface{}, err error
 
 // Connection return redis connection.
 // usage:
-//   conn := redis.Connection()
-//   defer conn.Close()
-//   ... do something ...
+//
+//	conn := redis.Connection()
+//	defer conn.Close()
+//	... do something ...
 func Connection() redis.Conn {
 	logger.Info("get new redis connection from pool",
 		zap.Namespace("context"),

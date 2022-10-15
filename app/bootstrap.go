@@ -15,9 +15,9 @@ import (
 	"github.com/gookit/goutil/fsutil"
 	"github.com/gookit/goutil/jsonutil"
 	"github.com/gookit/i18n"
-	"github.com/inhere/go-gin-skeleton/app/cache"
+	"github.com/weilinux/go-gin-skeleton-auth/app/cache"
 	// - redis, mongo, mysql services
-	"github.com/inhere/go-gin-skeleton/model"
+	"github.com/weilinux/go-gin-skeleton-auth/model"
 )
 
 var (

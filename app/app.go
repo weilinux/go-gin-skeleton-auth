@@ -3,8 +3,8 @@ package app
 import (
 	"os"
 
-	"github.com/inhere/go-gin-skeleton/helper"
-	"github.com/inhere/go-gin-skeleton/model"
+	"github.com/weilinux/go-gin-skeleton-auth/helper"
+	"github.com/weilinux/go-gin-skeleton-auth/model"
 )
 
 // allowed app env name
@@ -29,8 +29,8 @@ const (
 )
 
 var (
-	Name     = "github.com/inhere/go-gin-skeleton"
-	EnvName  = EnvDev
+	Name    = "github.com/weilinux/go-gin-skeleton-auth"
+	EnvName = EnvDev
 
 	Debug    bool
 	Hostname string
@@ -38,7 +38,7 @@ var (
 	// AbsPath always return abs path.
 	AbsPath = helper.GetRootPath()
 
-	GitInfo  model.AppInfo
+	GitInfo model.AppInfo
 
 	HttpPort = 9550
 )

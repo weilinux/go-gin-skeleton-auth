@@ -6,7 +6,7 @@ import (
 
 	"github.com/gookit/gcli/v2"
 	"github.com/gookit/gcli/v2/builtin"
-	"github.com/inhere/go-gin-skeleton/cmd/handler"
+	"github.com/weilinux/go-gin-skeleton-auth/cmd/handler"
 )
 
 // for test run: go build ./demo/cliapp.go && ./cliapp

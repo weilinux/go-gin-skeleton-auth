@@ -2,7 +2,7 @@ package web
 
 import (
 	"github.com/gin-gonic/gin"
-	"github.com/inhere/go-gin-skeleton/web/controller"
+	"github.com/weilinux/go-gin-skeleton-auth/web/controller"
 )
 
 // AddRoutes

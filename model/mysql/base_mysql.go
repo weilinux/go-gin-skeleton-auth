@@ -7,7 +7,7 @@ import (
 	"strings"
 
 	_ "github.com/go-sql-driver/mysql"
-	"github.com/inhere/go-gin-skeleton/app"
+	"github.com/weilinux/go-gin-skeleton-auth/app"
 	"xorm.io/core"
 	"xorm.io/xorm"
 )
@@ -15,19 +15,19 @@ import (
 const DSNTemplate = "%s:%s@tcp(%s:%d)/%s?charset=utf8"
 
 type dbConfig struct {
-	Host string
-	Port int
-	User string
-	Name string
+	Host     string
+	Port     int
+	User     string
+	Name     string
 	Password string
 
-	Disable bool
+	Disable     bool
 	MaxIdleConn int
 	MaxOpenConn int
 }
 
 var (
-	cfg dbConfig
+	cfg    dbConfig
 	engine *xorm.Engine
 )
 
@@ -41,7 +41,7 @@ func InitMysql() (err error) {
 		return
 	}
 
-	dsn := fmt.Sprintf(DSNTemplate, cfg.User, cfg.Password, cfg.Host, cfg.Port, cfg.Name, )
+	dsn := fmt.Sprintf(DSNTemplate, cfg.User, cfg.Password, cfg.Host, cfg.Port, cfg.Name)
 	fmt.Printf("mysql - %s\n", dsn)
 
 	// create engine

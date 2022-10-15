@@ -1,4 +1,4 @@
-module github.com/inhere/go-gin-skeleton
+module github.com/weilinux/go-gin-skeleton-auth
 
 go 1.11
 

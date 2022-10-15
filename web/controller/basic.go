@@ -5,7 +5,7 @@ import (
 	"strconv"
 
 	"github.com/gin-gonic/gin"
-	"github.com/inhere/go-gin-skeleton/app"
+	"github.com/weilinux/go-gin-skeleton-auth/app"
 )
 
 // JsonData is api response body structure. HttpRes
@@ -54,9 +54,13 @@ func (a *BaseApi) DataRes(data interface{}) *JsonData {
 // MakeRes
 // code custom error code
 // empty map:
-// 	c.DataRes(map[string]string{})
+//
+//	c.DataRes(map[string]string{})
+//
 // empty list:
-// 	c.DataRes([]int{})
+//
+//	c.DataRes([]int{})
+//
 // err  real error message, the message will not output, only write to log file.
 func (a *BaseApi) MakeRes(code int, err error, data interface{}) *JsonData {
 	if data == nil {

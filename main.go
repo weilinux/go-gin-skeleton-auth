@@ -9,16 +9,16 @@ import (
 	"time"
 
 	"github.com/gookit/color"
-	"github.com/inhere/go-gin-skeleton/web"
+	"github.com/weilinux/go-gin-skeleton-auth/web"
 
 	// boot and init some services(log, cache, eureka)
-	"github.com/inhere/go-gin-skeleton/app"
-	"github.com/inhere/go-gin-skeleton/model/mongo"
-	"github.com/inhere/go-gin-skeleton/model/myrds"
-	"github.com/inhere/go-gin-skeleton/model/mysql"
+	"github.com/weilinux/go-gin-skeleton-auth/app"
+	"github.com/weilinux/go-gin-skeleton-auth/model/mongo"
+	"github.com/weilinux/go-gin-skeleton-auth/model/myrds"
+	"github.com/weilinux/go-gin-skeleton-auth/model/mysql"
 )
 
-func init()  {
+func init() {
 	var err error
 	app.Bootstrap("./config")
 
@@ -45,7 +45,7 @@ func main() {
 	web.Run()
 }
 
-func checkError(prefix string, err error)  {
+func checkError(prefix string, err error) {
 	if err != nil {
 		color.Error.Println(prefix, err.Error())
 		os.Exit(2)

@@ -5,8 +5,8 @@ import (
 
 	"github.com/gin-gonic/gin"
 	"github.com/gookit/color"
-	"github.com/inhere/go-gin-skeleton/app"
-	"github.com/inhere/go-gin-skeleton/web/middleware"
+	"github.com/weilinux/go-gin-skeleton-auth/app"
+	"github.com/weilinux/go-gin-skeleton-auth/web/middleware"
 )
 
 var server *gin.Engine

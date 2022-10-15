@@ -2,7 +2,7 @@
 # 基础配置
 ################################################################
 
-name = "go-gin-skeleton"
+name = "go-gin-skeleton-auth"
 debug = false
 timezone = "PRC"
 defKey = "def value"

@@ -4,7 +4,7 @@ import (
 	"os"
 
 	"github.com/gin-gonic/gin"
-	"github.com/inhere/go-gin-skeleton/app"
+	"github.com/weilinux/go-gin-skeleton-auth/app"
 )
 
 func Home(c *gin.Context) {

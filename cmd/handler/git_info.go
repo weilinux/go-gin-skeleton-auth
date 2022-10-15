@@ -8,7 +8,7 @@ import (
 	"github.com/gookit/gcli/v2"
 	"github.com/gookit/goutil/cliutil"
 	"github.com/gookit/goutil/jsonutil"
-	"github.com/inhere/go-gin-skeleton/model"
+	"github.com/weilinux/go-gin-skeleton-auth/model"
 )
 
 var gitOpts GitOpts
@@ -20,9 +20,9 @@ type GitOpts struct {
 // GitCommand
 func GitCommand() *gcli.Command {
 	cmd := gcli.Command{
-		Name:        "git:info",
-		Aliases:     []string{"gitinfo"},
-		UseFor: "collect project info by git info",
+		Name:    "git:info",
+		Aliases: []string{"gitinfo"},
+		UseFor:  "collect project info by git info",
 
 		Func: gitExecute,
 	}
@@ -35,7 +35,8 @@ func GitCommand() *gcli.Command {
 }
 
 // arg test:
-// 	go build cliapp.go && ./cliapp git:info
+//
+//	go build cliapp.go && ./cliapp git:info
 func gitExecute(_ *gcli.Command, _ []string) error {
 	info := model.AppInfo{}
 

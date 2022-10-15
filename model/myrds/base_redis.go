@@ -4,20 +4,20 @@ import (
 	"fmt"
 
 	"github.com/garyburd/redigo/redis"
-	"github.com/inhere/go-gin-skeleton/app"
+	"github.com/weilinux/go-gin-skeleton-auth/app"
 	"go.uber.org/zap"
 )
 
-type rdsConfig struct{
+type rdsConfig struct {
 	Server string
-	Auth string
-	Db int
+	Auth   string
+	Db     int
 
 	Disable bool
 }
 
 var (
-	cfg rdsConfig
+	cfg  rdsConfig
 	pool *redis.Pool
 )
 
@@ -64,9 +64,10 @@ func ClosePool() error {
 
 // Connection return redis connection.
 // usage:
-//   conn := redis.Connection()
-//   defer conn.Close()
-//   ... do something ...
+//
+//	conn := redis.Connection()
+//	defer conn.Close()
+//	... do something ...
 func Connection() redis.Conn {
 	app.Logger.Info("get new redis connection from pool",
 		zap.Namespace("context"),
@@ -84,9 +85,10 @@ func Connection() redis.Conn {
 
 // WithConnection 公共方法，使用 collection 对象
 // usage:
-//   error = redis.WithConnection(func (c redis.Conn) error {
-//       ... do something ...
-//   })
+//
+//	error = redis.WithConnection(func (c redis.Conn) error {
+//	    ... do something ...
+//	})
 func WithConnection(fn func(c redis.Conn) (interface{}, error)) (interface{}, error) {
 	conn := Connection()
 	defer conn.Close()
